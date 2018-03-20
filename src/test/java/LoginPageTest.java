@@ -1,4 +1,4 @@
-import com.sun.deploy.association.AssociationAlreadyRegisteredException;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-import com.sun.jna.platform.win32.W32Errors;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

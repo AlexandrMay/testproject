@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 
 public class GithubUniversePage {
     public GithubUniversePage(WebDriver driver) {
@@ -17,12 +18,12 @@ public class GithubUniversePage {
     private By link  = By.xpath("//a[text()='Click here to update your profile.']");
 
 
-
+    @Step
     public GithubUniversePage typeEmail (String email) {
         driver.findElement(emailField).sendKeys(email);
         return this;
     }
-
+    @Step
     public GithubUniversePage tryToAddMe (String email) {
         this.typeEmail(email);
         driver.findElement(addMeButton).click();
