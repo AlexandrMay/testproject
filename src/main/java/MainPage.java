@@ -4,7 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import ru.yandex.qatools.allure.annotations.Step;
+
 
 
 public class MainPage {
@@ -20,33 +20,36 @@ public class MainPage {
     private By signUpFormButton = By.xpath("(//button[text()='Sign up for GitHub'])[1]");
     private By searchField = By.xpath("//input[@placeholder='Search GitHub']");
 
-    @Step
+
+
+
     public SearchResultsPage typeSearch(String searchInfo) {
         driver.findElement(searchField).sendKeys(searchInfo);
         return new SearchResultsPage(driver);
+
     }
-    @Step
+
     public SearchResultsPage typeEnter () {
         driver.findElement(searchField).sendKeys(Keys.ENTER);
         return new SearchResultsPage(driver);
     }
 
-    @Step
+
    public LoginPage clickSignIn() {
        driver.findElement(signInButton).click();
        return new LoginPage(driver);
    }
-    @Step
+
     public SignUpPage clicksignUpButton() {
         driver.findElement(signUpButton).click();
         return new SignUpPage(driver);
     }
-    @Step
+
     public SignUpPage clicksignUpFormButton() {
         driver.findElement(signUpFormButton).click();
         return new SignUpPage(driver);
     }
-    @Step
+
     public MainPage typeUserName (String username) {
        driver.findElement(userNameField).sendKeys(username);
        return this;
@@ -56,12 +59,12 @@ public class MainPage {
         driver.findElement(passwordField).sendKeys(password);
         return this;
     }
-    @Step
+
     public MainPage typeEmail (String email) {
         driver.findElement(emailField).sendKeys(email);
         return this;
     }
-    @Step
+
     public SignUpPage register (String username, String email, String password) {
        this.typeUserName(username);
        this.typeEmail(email);

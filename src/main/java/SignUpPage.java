@@ -1,6 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import ru.yandex.qatools.allure.annotations.Step;
+
 
 public class SignUpPage {
     public SignUpPage(WebDriver driver) {
@@ -17,22 +17,22 @@ public class SignUpPage {
     private By UserNameError = By.xpath("//input[@id=\"user_login\"]/ancestor::dd/following-sibling::dd[@class='error']");
     private By emailError = By.xpath("//input[@id=\"user_email\"]/ancestor::dd/following-sibling::dd[@class='error']");
     private By passwordError = By.xpath("//input[@id=\"user_password\"]/ancestor::dd/following-sibling::dd[@class='error']");
-    @Step
+
     public SignUpPage typeUserName (String username) {
         driver.findElement(userNameField).sendKeys(username);
         return this;
     }
-    @Step
+
     public SignUpPage typePassword (String password) {
         driver.findElement(passwordField).sendKeys(password);
         return this;
     }
-    @Step
+
     public SignUpPage typeEmail (String email) {
         driver.findElement(emailField).sendKeys(email);
         return this;
     }
-    @Step
+
     public SignUpPage registerwithInvalidCreds(String username, String email, String password) {
         this.typeUserName(username);
         this.typeEmail(email);

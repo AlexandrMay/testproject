@@ -1,6 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import ru.yandex.qatools.allure.annotations.Step;
+
 
 public class LoginPage {
 
@@ -17,22 +17,22 @@ public class LoginPage {
     private By error = By.xpath(".//*[@id='js-flash-container']//div[@class=\"container\"]");
     private By createAccLink = By.xpath("//a[text()='Create an account']");
 
-    @Step
+
     public LoginPage typeUsername(String username) {
         driver.findElement(loginField).sendKeys(username);
         return this;
     }
-    @Step
+
     public LoginPage typePassword(String password) {
         driver.findElement(passwordField).sendKeys(password);
         return this;
     }
-    @Step
+
     public LoginPage typeUserName(String userName) {
         driver.findElement(loginField).sendKeys(userName);
         return this;
     }
-    @Step
+
     public LoginPage LoginWithInvalidCreds (String password, String username) {
         this.typeUserName(username);
         this.typePassword(password);
@@ -47,7 +47,7 @@ public class LoginPage {
     public String getErrorText() {
         return driver.findElement(error).getText();
     }
-    @Step
+
     public SignUpPage createAccount() {
         driver.findElement(createAccLink).click();
         return new SignUpPage(driver);
