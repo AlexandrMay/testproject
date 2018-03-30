@@ -20,7 +20,7 @@ public class MainPage {
     private By signUpFormButton = By.xpath("(//button[text()='Sign up for GitHub'])[1]");
     private By searchField = By.xpath("//input[@placeholder='Search GitHub']");
 
-    @Step
+    //@Step
     public SearchResultsPage typeSearch(String searchInfo) {
         driver.findElement(searchField).sendKeys(searchInfo);
         return new SearchResultsPage(driver);
